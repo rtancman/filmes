@@ -1,4 +1,9 @@
 #######################
+# sqlite
+*.sqlite3
+movies/database.db
+
+#######################
 # Sublime
 
 # cache files for sublime text
