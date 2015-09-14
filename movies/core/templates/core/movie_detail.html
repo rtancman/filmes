@@ -1,0 +1,20 @@
+{% extends 'core/main.html' %}
+
+{% block content %}
+<header class="fix">
+    <h1 class="fl">Listagem de filmes</h1>
+</header>
+<section id="listagem" class='fix'>
+    <p>{{ movie.id }}</p>
+    <p>{{ movie.name }}</p>
+    <p>{{ movie.slug }}</p>
+    {% for category in movie.category.all %}
+        <a href="/genero/{{ category.slug }}">{{ category.name }}</a>
+    {% endfor %}
+    <p class="txt">
+    {% for author in movie.author.all %}
+        <a href="/autor/{{ author.slug }}">{{ author.name }}</a>
+    {% endfor %}
+    </p>
+</section>
+{% endblock content %}

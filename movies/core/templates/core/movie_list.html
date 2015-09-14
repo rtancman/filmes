@@ -1,0 +1,18 @@
+{% extends 'core/main.html' %}
+
+{% block content %}
+<header class="fix">
+    <h1 class="fl">Listagem de filmes</h1>
+</header>
+<section id="listagem" class='fix'>
+    <ul>
+    {% for movie in movies %}
+        <li class="fl">
+            <a href="/filme/{{ movie.slug }}">{{ movie.name }}</a>
+        </li>
+    {% empty %}
+        <h1>Sem filmes a serem exibidos</h1>
+    {% endfor %}
+</ul>
+</section>
+{% endblock content %}

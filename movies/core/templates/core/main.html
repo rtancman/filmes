@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv='content-Language' content='pt-BR' />
+    <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/logo.png">
+    <title>Storm desafio | Filmes</title>
+    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="{{ STATIC_URL }}/css/global.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="sdf-doc">
+        <header id="sdf-header">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{% url 'core:home' %}"><span class="glyphicon glyphicon-home"></span> Home</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main id="sdf-content">
+            <div class="container">
+            {% block content %} {% endblock content %}
+            </div>
+        </main>
+        <footer id="sdf-footer">
+            <div class="container">
+                <a href="{% url 'core:home' %}" class="home" title="voltar para home"></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
