@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 # Build paths inside the project
+import dj_database_url
 from unipath import Path
 PROJECT_DIR = Path(__file__).parent
 
@@ -59,10 +60,7 @@ WSGI_APPLICATION = 'movies.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': PROJECT_DIR.child('database.db'),
-    }
+    'default': dj_database_url.config(default='sqlite:///'+PROJECT_DIR.child('database.db'))
 }
 
 # Internationalization
@@ -81,7 +79,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
+STATIC_ROOT = PROJECT_DIR.child('static')
 STATIC_URL = '/static/'
 
 # Media files
